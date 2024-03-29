@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/sonuc"
+        android:layout_width="248dp"
+        android:layout_height="131dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="84dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#03A9F4"
+        android:fontFamily="sans-serif-medium"
+        android:hint="işlem sonucunuz:"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/sayi1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="25dp"
+        android:ems="10"
+        android:hint="sayı giriniz:"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColorLink="#FFC107"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/sayi2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/sayi2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="54dp"
+        android:ems="10"
+        android:hint="sayı giriniz:"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColorLink="#2196F3"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sayi1" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="303dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="57dp"
+        android:onClick="karekok"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/sonuc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sayi2">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="58dp"
+            android:layout_height="48dp"
+            android:onClick="toplam"
+            android:text="+"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:onClick="cikarma"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:onClick="carpma"
+            android:text="*" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:onClick="bolme"
+            android:text="/" />
+
+        <Button
+            android:id="@+id/karekok"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="karekok"
+            android:text="√"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/kare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="kare"
+            android:text="^" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="linearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
